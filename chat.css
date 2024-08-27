@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e0f2e9;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+.navbar {
+    width: 100%;
+    background: #4CAF50;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar button {
+    background-color: #2E7D32;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.chat-header {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.chat-header .material-icons {
+    font-size: 50px;
+    color: #2E7D32;
+}
+
+.chat-header h2 {
+    margin: 10px 0 5px;
+    color: #2E7D32;
+}
+
+.chat-header p {
+    color: gray;
+    font-size: 14px;
+}
+
+.chat-box {
+    background-color: #A5D6A7;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    height: 400px;
+    padding: 10px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.message {
+    background-color: white;
+    padding: 10px;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+
+.message.sent {
+    align-self: flex-end;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    max-width: 500px;
+    margin-top: 10px;
+}
+
+.input-container input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid #A5D6A7;
+    outline: none;
+}
+
+.input-container .material-icons {
+    font-size: 30px;
+    color: #2E7D32;
+    cursor: pointer;
+}
+
+.emergency {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.emergency .material-icons {
+    font-size: 50px;
+    color: red;
+}
+
+.emergency p {
+    font-size: 20px;
+    font-weight: bold;
+    color: red;
+}
+</style>
