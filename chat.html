@@ -15,25 +15,23 @@
 
 </head>
 <body>
-    <!-- Navbar -->
+   
     <div class="navbar">
         <button onclick="history.back()">Voltar</button>
         <button>Salvar</button>
     </div>
 
-    <!-- Header do Chat -->
+   
     <div class="chat-header">
         <span class="material-icons">person</span>
         <h2>Maria</h2>
         <p>+55 (00) 0000-000</p>
     </div>
 
-    <!-- Caixa de Chat -->
     <div class="chat-box" id="chat-box">
-        <!-- As mensagens aparecerão aqui -->
+       
     </div>
 
-    <!-- Input para Mensagem -->
     <div class="input-container">
         <input type="text" id="messageInput" placeholder="Digite Aqui">
         <span class="material-icons" onclick="sendMessage()">send</span>
@@ -46,15 +44,13 @@
         let currentSlide = 0;
 
         function loadContacts() {
-            // Obtenha os contatos do localStorage
+
             let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
 
             const sliderTrack = document.getElementById('sliderTrack');
 
-            // Limpa os contatos existentes no slider
             sliderTrack.innerHTML = '';
 
-            // Adiciona cada contato ao slider
             contacts.forEach(contact => {
                 const contactCard = document.createElement('div');
                 contactCard.className = 'slider-item';

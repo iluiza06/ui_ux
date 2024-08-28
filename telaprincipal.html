@@ -25,47 +25,112 @@
             </span>
         </div>
     </div>
-        <h1>Meus Profissionais</h1>
-        <div class="contacts-container">
-            <div class="contacts" id="contacts">
-                <span class="material-symbols-outlined">
-                    arrow_back_ios
-                </span>
-                <div class="contact-card">
-                    <span class="material-icons">chat</span>
-                    <span>Dr. Luiza</span>
-                    <a href="http://127.0.0.1:5500/chat.html">
-                        <button>Chat</button>
-                    </a>
-                </div>
-                <div class="contact-card">
-                    <span class="material-icons">chat</span>
-                    <span>Personal.T</span>
-                    <a href="http://127.0.0.1:5500/chat.html">
-                    <button>Chat</button>
-                </a>
+    <h1>Meus Profissionais</h1>
+    <div class="contacts-container">
+        <div class="contacts" id="contacts">
+            <span class="material-symbols-outlined" id="slideLeft">
+                arrow_back_ios
+            </span>
+            <div class="slider">
+                <div class="slider-container">
+                    <div class="slider-track" id="sliderTrack">
+                        <div class="slider-item">
+                            <div class="contact-card">
+                                <span class="material-icons">chat</span>
+                                <span class="contact-name">Dr. Luiza</span>
+                                <a href="http://127.0.0.1:5500/chat.html">
+                                    <button class="chat-btn">Chat</button>
+                                </a>
+                                <button class="edit-btn">Editar</button>
+                                <button class="delete-btn">Excluir</button>
+                            </div>
+                        </div>
+                        <div class="slider-item">
+                            <div class="contact-card">
+                                <span class="material-icons">chat</span>
+                                <span class="contact-name">Personal.T</span>
+                                <a href="http://127.0.0.1:5500/chat.html">
+                                    <button class="chat-btn">Chat</button>
+                                </a>
+                                <button class="edit-btn">Editar</button>
+                                <button class="delete-btn">Excluir</button>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
+            <span class="material-symbols-outlined" id="slideRight">
+                arrow_forward_ios
+            </span>
         </div>
-        <script>
-            function search() {
-                // Obtenha o valor da caixa de pesquisa
-                const query = document.getElementById('searchInput').value.toLowerCase();
-                
-                // Verifica se a consulta inclui palavras-chave específicas
-                if (query.includes("medico")) {
-                    // Redireciona para a página de médicos
-                    window.location.href = "medico.html";
-                } else if (query.includes("personal")) {
-                    // Redireciona para a página de personal trainers
-                    window.location.href = "personal.html";
-                } else if (query.includes("diarista")) {
-                    // Redireciona para a página de diaristas
-                    window.location.href = "diarista.html";
-                } else {
-                    alert("Nenhum profissional encontrado para a pesquisa: " + query);
-                }
-            }
-        </script>
+        <div class="add-card-container">
+            <button id="addCardBtn">Adicionar Card</button>
+        </div>
+    </div>
+    
+    <script>
+        let scrollAmount = 0;
+const sliderTrack = document.getElementById('sliderTrack');
+const slideLeft = document.getElementById('slideLeft');
+const slideRight = document.getElementById('slideRight');
+
+slideLeft.addEventListener('click', function() {
+    const itemWidth = document.querySelector('.slider-item').offsetWidth + 20; // largura do card + gap
+    scrollAmount -= itemWidth; 
+    if (scrollAmount < 0) {
+        scrollAmount = 0;
+    }
+    sliderTrack.style.transform = `translateX(-${scrollAmount}px)`;
+});
+
+slideRight.addEventListener('click', function() {
+    const itemWidth = document.querySelector('.slider-item').offsetWidth + 20; // largura do card + gap
+    const maxScroll = sliderTrack.scrollWidth - sliderTrack.clientWidth;
+    scrollAmount += itemWidth; 
+    if (scrollAmount > maxScroll) {
+        scrollAmount = maxScroll;
+    }
+    sliderTrack.style.transform = `translateX(-${scrollAmount}px)`;
+});
+
+document.getElementById('addCardBtn').addEventListener('click', function() {
+    const newItem = document.createElement('div');
+    newItem.className = 'slider-item';
+    newItem.innerHTML = `
+        <div class="contact-card">
+            <span class="material-icons">chat</span>
+            <span class="contact-name">Novo Profissional</span>
+            <a href="#" class="chat-link">
+                <button class="chat-btn">Chat</button>
+            </a>
+            <button class="edit-btn">Editar</button>
+            <button class="delete-btn">Excluir</button>
+        </div>
+    `;
+
+    sliderTrack.appendChild(newItem);
+
+    // Adiciona funcionalidade de edição ao novo card
+    newItem.querySelector('.edit-btn').addEventListener('click', function() {
+        const newName = prompt('Digite o novo nome:');
+        if (newName) {
+            this.parentElement.querySelector('.contact-name').textContent = newName;
+            // Atualiza o link do chat
+            this.parentElement.querySelector('.chat-link').href = `${newName.toLowerCase()}.html`;
+        }
+    });
+
+    // Adiciona funcionalidade de exclusão ao novo card
+    newItem.querySelector('.delete-btn').addEventListener('click', function() {
+        this.parentElement.parentElement.remove();
+    });
+
+    // Define o link do chat com base no nome do profissional
+    const contactName = newItem.querySelector('.contact-name').textContent.toLowerCase();
+    newItem.querySelector('.chat-link').href = `${contactName}.html`;
+});
+
+ </script>
+
 </body>
 </html>
