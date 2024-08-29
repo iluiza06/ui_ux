@@ -10,7 +10,7 @@ header {
     display: flex;
     background-color: #45AC42;
     justify-content: center;
-    padding: 15px;
+    padding: 15px 0;
 }
 
 nav {
@@ -18,7 +18,7 @@ nav {
     background: linear-gradient(to right, #A3D6A0, #EBF6E8);
     border: 1px solid #4A8748;
     border-radius: 50px;
-    padding: 5px 15px;
+    padding: 5px 15px 0;
     width: 50%;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     justify-content: space-between;
@@ -40,6 +40,7 @@ section {
 }
 
 section h1 {
+    font-weight: 500;
     margin-bottom: 0;
     padding: 0;
 }
@@ -95,4 +96,47 @@ section h1 {
 .check img{
     padding-top:21px;
     padding-left: 5px;
+}
+
+.bell{
+    display: flex;
+    margin-top:10px  ;
+}
+
+.bell img{
+    padding-top:21px;
+    padding-left: 5px;
+}
+
+.cardalarm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center ;
+    background-color: #a3d6a0c5;
+    width: 98px;
+    height: 116px;
+    margin-top: 14px;
+    border-radius: 3px;
+    border: 1px solid #5B9758;
+}
+
+.confirm{
+    background-color: #155913;
+    color: #FFFFFF;
+    border-radius: 3px;
+    border: none;
+    width: 78px;
+    height: 24px;
+    margin-top: 15px;
+}
+
+.time{
+    text-align: center;
+    font-weight: 500; 
+}
+
+.text{
+display: flex;  
+
 }
