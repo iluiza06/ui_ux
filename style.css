@@ -55,10 +55,13 @@ body {
 /* Heading */
 h1 {
     text-align: center;
-    padding: 20px;
     color: #155913;
     margin: 0;
-    margin-top: 100px;
+    margin-top: 80px; 
+}
+h2 {
+    color: #155913;
+    margin: 0;
 }
 
 /* Cards Navigation */
@@ -70,6 +73,7 @@ h1 {
     padding: 20px;
     position: relative;
     box-sizing: border-box;
+    margin-bottom: 10px; /* Adicionado para criar espaço entre a navegação de cards e o resumo de saúde */
 }
 
 .cards-container-wrapper {
@@ -183,18 +187,16 @@ h1 {
 
 /* Content */
 .content {
-    padding: 20px;
+    padding: 0 20px; /* Ajuste de padding */
     text-align: center;
 }
 
+/* Health Summary */
 .health-summary {
-    margin-top: 20px;
-}
-
-.health-summary h2 {
     font-size: 1.5rem;
     color: #155913;
     margin-bottom: 10px;
+    margin-top: 10px; 
 }
 
 .summary-box {
@@ -202,10 +204,13 @@ h1 {
     width: 100%;
     height: 150px;
     border-radius: 10px;
+    margin-top: 0; 
 }
 
+
+/* Alarms Section */
 .alarms-section {
-    margin-top: 30px;
+    margin-top: 20px; /* Reduzido para ajustar a posição */
 }
 
 .alarms-section h2 {
@@ -283,29 +288,6 @@ h1 {
     text-align: center;
 }
 
-.emergency-button {
-    background-color: #FF0000;
-    color: #ffffff;
-    border-radius: 50%;
-    width: 80px;
-    height: 80px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
-    position: relative;
-}
-
-.emergency-button p {
-    font-size: 0.8rem;
-    font-weight: bold;
-    margin-top: 50px;
-    position: absolute;
-    bottom: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
 /* Responsiveness */
 @media (max-width: 768px) {
     .navbar {
@@ -347,11 +329,6 @@ h1 {
         font-size: 0.7rem;
         margin-top: 40px;
     }
-
-    .cards-container-wrapper {
-        width: 80%;
-    }
-
     .professional-card {
         width: 80px;
         height: 100px;
@@ -379,7 +356,7 @@ h1 {
         padding: 10px;
     }
 
-    h1 {
+    h2 {
         margin-top: 70px;
         font-size: 1.25rem;
     }
@@ -447,7 +424,7 @@ h1 {
         padding: 15px 20px;
     }
 
-    h1 {
+    h2 {
         margin-top: 90px;
         font-size: 1.75rem;
     }

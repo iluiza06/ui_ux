@@ -1,27 +1,18 @@
-
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saúde</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="navbar.css">
-    <link rel="stylesheet" href="cards.css">
-    <link rel="stylesheet" href="responsive.css">
-    <link rel="stylesheet" href="iphone14.css">
 </head>
 
 <body>
+    
     <div class="navbar">
         <div class="search-container">
             <input type="text" id="searchInput" placeholder="Buscar profissionais..." oninput="filterProfessionals()">
@@ -42,7 +33,6 @@
                     <div class="card-content">
                         <span class="material-icons">chat</span>
                     </div>
-                    
                     <button class="delete-button" onclick="deleteCard(this)">
                         <span class="material-icons">delete</span>
                     </button>
@@ -57,7 +47,7 @@
                         <span class="material-icons">delete</span>
                     </button>
                     <p>Personal.T</p>
-                    <button class="chat-button">Chat</button> <!-- Adiciona este botão dentro do card -->
+                    <button class="chat-button">Chat</button>
                 </div>
                 <div class="professional-card add-card" onclick="addNewCard()">
                     <span class="material-icons">add_circle</span>
@@ -101,81 +91,64 @@
             </div>
             <button class="add-alarm">Adicionar +</button>
         </div>
-
-        <div class="emergency-section">
-            <div class="emergency-button">
-                <span class="material-icons">add_alert</span>
-                <p>EMERGÊNCIA</p>
-            </div>
-        </div>
     </div>
 
     <script>
-    function addNewCard() {
-        const container = document.getElementById('cards-container');
-        
-        // Criação do novo card
-        const newCard = document.createElement('div');
-        newCard.classList.add('professional-card');
-        
-        // Conteúdo do card
-        const cardContent = document.createElement('div');
-        cardContent.classList.add('card-content');
-        
-        // Ícone de chat (fixo no topo)
-        const icon = document.createElement('span');
-        icon.classList.add('material-icons');
-        icon.textContent = 'chat';
-        cardContent.appendChild(icon);
-        
-        // Botão "Chat"
-        const chatButton = document.createElement('button');
-        chatButton.classList.add('chat-button');
-        chatButton.textContent = 'Chat';
-        newCard.appendChild(chatButton);
-        
-        // Botão de exclusão
-        const deleteButton = document.createElement('button');
-        deleteButton.classList.add('delete-button');
-        deleteButton.onclick = function() {
-            deleteCard(deleteButton);
-        };
-        
-        const deleteIcon = document.createElement('span');
-        deleteIcon.classList.add('material-icons');
-        deleteIcon.textContent = 'delete';
-        deleteButton.appendChild(deleteIcon);
-        
-        // Nome do profissional
-        const name = document.createElement('p');
-        name.textContent = 'Novo Profissional';
-        
-        // Adicionar os elementos ao card
-        newCard.appendChild(cardContent);
-        newCard.appendChild(deleteButton);
-        newCard.appendChild(name);
-        newCard.appendChild(chatButton); // Adiciona o botão de chat ao novo card
-        
-        // Adicionar o novo card antes do botão de adicionar
-        const addButton = document.querySelector('.add-card');
-        container.insertBefore(newCard, addButton);
+        function addNewCard() {
+            const container = document.getElementById('cards-container');
 
-        // Atualizar visibilidade das setas
-        updateArrows();
-    }
+            // Criação do novo card
+            const newCard = document.createElement('div');
+            newCard.classList.add('professional-card');
 
-    function deleteCard(button) {
-        const card = button.parentElement;
-        card.remove();
-        updateArrows();
-    }
+            // Conteúdo do card
+            const cardContent = document.createElement('div');
+            cardContent.classList.add('card-content');
 
-    // Se você tiver outras funções no script, elas podem ser adicionadas aqui.
-</script>
+            // Ícone de chat
+            const icon = document.createElement('span');
+            icon.classList.add('material-icons');
+            icon.textContent = 'chat';
 
-</script>
+            // Botão de exclusão
+            const deleteButton = document.createElement('button');
+            deleteButton.classList.add('delete-button');
+            deleteButton.onclick = function() {
+                deleteCard(deleteButton);
+            };
 
+            const deleteIcon = document.createElement('span');
+            deleteIcon.classList.add('material-icons');
+            deleteIcon.textContent = 'delete';
+            deleteButton.appendChild(deleteIcon);
+
+            // Nome do profissional
+            const name = document.createElement('p');
+            name.textContent = 'Novo Profissional';
+
+            // Adicionar os elementos ao card
+            cardContent.appendChild(icon);
+            newCard.appendChild(cardContent);
+            newCard.appendChild(deleteButton);
+            newCard.appendChild(name);
+
+            // Adicionar o novo card antes do botão de adicionar
+            const addButton = document.querySelector('.add-card');
+            container.insertBefore(newCard, addButton);
+
+            // Atualizar as setas
+            updateArrows();
+        }
+
+        function deleteCard(button) {
+            const card = button.parentElement;
+            card.remove();
+            updateArrows();
+        }
+
+        function updateArrows() {
+            // Código para atualizar as setas, se necessário
+        }
     </script>
 </body>
-
 </html>
