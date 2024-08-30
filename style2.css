@@ -6,6 +6,17 @@ body {
     box-sizing: border-box;
 }
 
+main{
+    display: flex;
+    flex-direction: column;
+    margin: 0px auto;
+    width: 50%;
+}
+
+h1, p {
+    text-align: center;
+}
+
 header {
     display: flex;
     background-color: #45AC42;
@@ -30,6 +41,7 @@ input {
     border: none;
     outline: none;
     width: 80%;
+    cursor: pointer;
 }
 
 section {
@@ -66,6 +78,12 @@ section h1 {
     width:41px ;
     height:19px ;
     margin-top: 15px;
+    cursor: pointer;
+}
+
+.chat:hover {
+    background-color: #4ba54b;
+    color: #ffffff;
 }
 
 .name 
@@ -75,16 +93,17 @@ section h1 {
 
 .grup{
     display: flex;
+    flex-wrap: wrap;
     gap: 20px;
 }
 
 .notes{
-    width:300px ;
+    width:50% ;
     height:136px ;
     background-color: #46ac42b6;
     border-radius: 3px;
     border: 1px solid #5B9758;
-    margin-top: 14px;
+    margin-top: 10px;
     
 }
 
@@ -114,9 +133,8 @@ section h1 {
     justify-content: center;
     align-items: center ;
     background-color: #a3d6a0c5;
-    width: 98px;
-    height: 116px;
-    margin-top: 14px;
+    width: 120px;
+    height: 150px;
     border-radius: 3px;
     border: 1px solid #5B9758;
 }
@@ -128,7 +146,12 @@ section h1 {
     border: none;
     width: 78px;
     height: 24px;
-    margin-bottom: 100px;
+    cursor: pointer;
+}
+
+.confirm:hover {
+    background-color: #4ba54b;
+    color: #ffffff;
 }
 
 .time{
@@ -137,5 +160,53 @@ section h1 {
 }
 
 .text{
-    padding-top: 50px;
+font-weight: 500;
+text-align: center;
+
 }
+
+.grup2{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+}
+
+.botoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.btn{
+    margin-bottom: 5px;
+    width: 120px;
+    padding: 5px ;
+    background-color: #155913;
+    color:#FFFFFF;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #4ba54b;
+    color: #ffffff;
+}
+
+.sos{
+    font-weight: 600;
+    width: 100px;
+    margin: 15px auto 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.sos p{
+    font-weight: 800;
+}
+
