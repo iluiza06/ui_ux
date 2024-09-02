@@ -200,8 +200,9 @@ section h1 {
 }
 
 .btn:hover {
-    background-color: #4ba54b;
-    color: #ffffff;
+    background-color: #D5EECF;
+    color: #155913;
+    
 }
 
 .sos {
@@ -278,7 +279,8 @@ section h1 {
 }
 
 .editable:hover {
-    background-color: #e0f0e0;
+    background-color: #4ba54b;
+    color: #ffffff;
 }
 
 
@@ -306,25 +308,24 @@ section h1 {
         
     }
 
-    .btn,
     .chat {
         width: 80%;
         text-align: center;
     }
-
+    
     .confirm {
         width: 78px;
         height: 24px;
         margin-bottom: 10px;
     }
-
+    
     .time {
         display: flex;
         align-items: center;
         justify-content: center;
         margin: 4px;
     }
-
+    
     .grup,
     .grup2,
     .botoes {
@@ -333,17 +334,20 @@ section h1 {
         padding-top: 25px;
         
     }
-
+    
     .text {
         justify-content: center;
         margin-bottom: 5px;
     }
-
+    
     .editable{
         display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 3px;
+        flex-direction: column;
+        margin: 0%;
+        
+    }
 
-
+    .btn{
+        width: 100px;
+    }
 }
