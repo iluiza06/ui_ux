@@ -74,7 +74,7 @@
             </div>
 
             <div>
-                <p class="text"">Remédio</p>
+                <p class="text">Remédio</p>
                     <div class=" cardalarm">
                 <p class="time">Captopril</p>
                 <p class="time">19:00</p>
@@ -82,7 +82,6 @@
             </div>
             </div>
 
-            </div>
         </section>
 
         <div class="botoes">
@@ -96,7 +95,111 @@
             <p>EMERGENCIA</p>
         </button>
 
-    </main>
-</body>
 
+        <div id="modal-confirm" class="modal">
+            <div class="modal-content">
+                <p>Você realmente deseja confirmar esse alarme?</p>
+                <button id="modal-yes" class="modal-btn">Sim</button>
+                <button id="modal-no" class="modal-btn">Não</button>
+            </div>
+        </div>
+        
+    </main>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const modal = document.getElementById("modal-confirm");
+            const modalYes = document.getElementById("modal-yes");
+            const modalNo = document.getElementById("modal-no");
+            let currentCard; 
+    
+            document.querySelectorAll(".btn")[0].addEventListener("click", function() {
+                const newCardContainer = document.createElement("div");
+                newCardContainer.classList.add("card-container");
+                newCardContainer.innerHTML = `
+                    <div>
+                        <p class="text">Novo Alarme</p>
+                        <div class="cardalarm">
+                            <p class="time">Nova Hora</p>
+                            <p class="additional-info">Informação adicional</p>
+                            <button class="confirm">Confirmar</button>
+                        </div>
+                    </div>
+                `;
+                document.querySelector(".grup2").appendChild(newCardContainer);
+    
+                addConfirmFunctionality(newCardContainer.querySelector(".confirm"));
+            });
+    
+            document.querySelectorAll(".btn")[1].addEventListener("click", function() {
+                document.querySelectorAll(".card-container").forEach(function(card) {
+                    const textElem = card.querySelector(".text");
+                    const timeElem = card.querySelector(".time");
+                    const additionalInfoElem = card.querySelector(".additional-info");
+    
+                    textElem.classList.add("editable");
+                    timeElem.classList.add("editable");
+                    additionalInfoElem.classList.add("editable");
+    
+                    textElem.addEventListener("click", function() {
+                        const newText = prompt("Edite o texto:", this.innerText);
+                        if (newText) {
+                            this.innerText = newText;
+                        }
+                    });
+    
+                    timeElem.addEventListener("click", function() {
+                        const newTime = prompt("Edite a hora:", this.innerText);
+                        if (newTime) {
+                            this.innerText = newTime;
+                        }
+                    });
+    
+                    additionalInfoElem.addEventListener("click", function() {
+                        const newInfo = prompt("Edite a informação adicional:", this.innerText);
+                        if (newInfo) {
+                            this.innerText = newInfo;
+                        }
+                    });
+    
+                    document.addEventListener("click", function(event) {
+                        if (!card.contains(event.target) && !event.target.classList.contains("btn")) {
+                            textElem.classList.remove("editable");
+                            timeElem.classList.remove("editable");
+                            additionalInfoElem.classList.remove("editable");
+                        }
+                    });
+                });
+            });
+    
+            function addConfirmFunctionality(confirmButton) {
+                confirmButton.addEventListener("click", function() {
+                    currentCard = this.closest(".card-container"); 
+                    modal.style.display = "block"; 
+                });
+            }
+    
+            modalNo.addEventListener("click", function() {
+                modal.style.display = "none";
+            });
+    
+            modalYes.addEventListener("click", function() {
+                if (currentCard) {
+                    currentCard.style.transition = "opacity 0.5s ease-out, transform 0.5s ease-out";
+                    currentCard.style.opacity = "0";
+                    currentCard.style.transform = "scale(0.9)";
+                    setTimeout(() => currentCard.remove(), 500);
+                }
+                modal.style.display = "none";
+            });
+    
+            window.addEventListener("click", function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            });
+        });
+    </script>
+</body>
 </html>
