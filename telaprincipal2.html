@@ -27,14 +27,14 @@
                 <div>
                     <div class="card">
                         <img src="./img/chat.svg" alt="chat">
-                        <button class="chat">chat</button>
+                        <a href="./chatdrluiza.html"> <button class="chat">chat</button></a>
                     </div>
                     <p class="name">Dr.Luiza</p>
                 </div>
                 <div>
                     <div class="card">
                         <img src="./img/chat.svg" alt="chat">
-                        <a href="./chatdrluiza.html"><button class="chat">chat</button></a>
+                       <button class="chat">chat</button>
                     </div>
                     <p class="name">Personal.T</p>
                 </div>
@@ -224,23 +224,24 @@
         });
 
         document.addEventListener("DOMContentLoaded", function() {
-            // Verifica se a flag está no localStorage
-            if (localStorage.getItem("savedHelena") === "true") {
-                // Cria a nova div e adiciona ao grupo de profissionais
+            
+            const savedProfessional = JSON.parse(localStorage.getItem("savedProfessionals"));
+
+            if (savedProfessional) {
+                
                 const newDiv = document.createElement("div");
                 newDiv.innerHTML = `
                     <div>
                         <div class="card">
-                            <img src="./img/chat.svg" alt="chat">
+                            <img src="${savedProfessional.img}" alt="chat">
                             <button class="chat">chat</button>
                         </div>
-                        <p class="name">Helena</p>
+                        <p class="name">${savedProfessional.name}</p>
                     </div>
                 `;
                 document.getElementById("professionalsGroup").appendChild(newDiv);
-                
-                // Remove a flag do localStorage para não adicionar novamente ao recarregar a página
-                localStorage.removeItem("savedHelena");
+
+                localStorage.removeItem("savedProfessionals");
             }
         });
     </script>

@@ -26,7 +26,7 @@
 
     <div class="chat-header">
         <span class="material-icons">person</span>
-        <h2>Helena</h2>
+        <h2>Jamile</h2>
         <p>+55 (00) 0000-000</p>
     </div>
 
@@ -50,9 +50,9 @@
 
     <script>
         document.getElementById("saveButton").addEventListener("click", function() {
-            // Armazena uma flag no localStorage
-            localStorage.setItem("savedHelena", "true");
-            // Redireciona para telaprincipal2.html
+            
+            localStorage.setItem("savedProfessionals", JSON.stringify({ name: "Jamile", img: "./img/chat.svg" }));
+            
             window.location.href = "telaprincipal2.html";
         });
     </script>
