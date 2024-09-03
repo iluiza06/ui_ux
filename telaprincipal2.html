@@ -15,14 +15,15 @@
     <header>
         <nav>
             <input type="text" id="searchInput" placeholder="Procure seu profissional..." />
-            <img src="./img/search_24dp_5F6368_FILL0_wght400_GRAD0_opsz24 (1).svg" alt="search">
+            <img src="./img/search_24dp_5F6368_FILL0_wght400_GRAD0_opsz24 (1).svg" alt="search" id="searchButton">
         </nav>
     </header>
     <main>
         <section>
             <h1>Meus profissionais</h1>
             <p>Deslize para o lado e obtenha mais informações</p>
-            <div class="grup">
+            
+            <div class="grup" id="professionalsGroup">
                 <div>
                     <div class="card">
                         <img src="./img/chat.svg" alt="chat">
@@ -33,7 +34,7 @@
                 <div>
                     <div class="card">
                         <img src="./img/chat.svg" alt="chat">
-                        <button class="chat">chat</button>
+                        <a href="./chatdrluiza.html"><button class="chat">chat</button></a>
                     </div>
                     <p class="name">Personal.T</p>
                 </div>
@@ -199,6 +200,48 @@
                     modal.style.display = "none";
                 }
             });
+        });
+
+
+        document.getElementById("searchButton").addEventListener("click", function() {
+            const searchValue = document.getElementById("searchInput").value.trim().toLowerCase();
+
+            if (searchValue === "medico") {
+                window.location.href = "medico.html";
+            } else if (searchValue === "personal") {
+                window.location.href = "personal.html";
+            } else if (searchValue === "diarista") {
+                window.location.href = "diarista.html";
+            } else {
+                alert("Profissional não encontrado!");
+            }
+        });
+
+        document.getElementById("searchInput").addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                document.getElementById("searchButton").click();
+            }
+        });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            // Verifica se a flag está no localStorage
+            if (localStorage.getItem("savedHelena") === "true") {
+                // Cria a nova div e adiciona ao grupo de profissionais
+                const newDiv = document.createElement("div");
+                newDiv.innerHTML = `
+                    <div>
+                        <div class="card">
+                            <img src="./img/chat.svg" alt="chat">
+                            <button class="chat">chat</button>
+                        </div>
+                        <p class="name">Helena</p>
+                    </div>
+                `;
+                document.getElementById("professionalsGroup").appendChild(newDiv);
+                
+                // Remove a flag do localStorage para não adicionar novamente ao recarregar a página
+                localStorage.removeItem("savedHelena");
+            }
         });
     </script>
 </body>

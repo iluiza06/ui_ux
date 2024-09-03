@@ -4,14 +4,14 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    align-items: center;
+    
 }
 
 header {
     display: flex;
     background-color: #45AC42;
     padding: 10px 0;
-    justify-content: end;
+    justify-content: space-between;
 }
 
 nav {
@@ -21,8 +21,8 @@ nav {
     border-radius: 50px;
     height: 39px;
     width: 60%;
-    margin-right: 30px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin-right: 30px;
 }
 
 input {
@@ -40,9 +40,9 @@ input {
     border: none;
     width: 93px;
     height: 24px;
-    margin-top: 9px;
+    margin: 9px 0 0 30px;
     cursor: pointer;
-    margin-right: 30%;
+    
 }
 
 .back:hover{
@@ -52,25 +52,52 @@ input {
 
 main{
     display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
     margin-top: 57px;
+    gap: 70px;
 }
 .card{
-    text-align: center;
-    background-color:#46ac4279 ;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color:#46ac426e ;
     width: 300px;
     height: 60px;
-    
+    border: 1px solid #155913;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.card:hover{
+background-color: #5ca14c9c;
 }
 
 .names{
-    
-    font-weight: 500 ;
+    font-weight: 600 ;
     color: #155913;
 
 }
- .img{
-    width: 47px;
+ .personsvg{
+    width: 45px;
     height: 45px;
  }
 
+ .arrowsvg{
+    width: 24px;
+    height: 24px;
+ }
+
+ .sos {
+    font-weight: 600;
+    width: 100px;
+    margin: 15px auto 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.sos p {
+    font-weight: 800;
+}
