@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(to top, #FCFCFC, #D5EECF);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+}
+
+.logo img {
+    width: 80px;
+    height: auto;
+    margin-bottom: 100px;
+}
+
+.logo h1 {
+    margin: 10px 0;
+    font-size: 24px;
+    color: #155913;
+}
+
+.login-form {
+    width: 100%;
+    max-width: 340px;
+    margin: 0 auto;
+    padding: 0 9px;
+    box-sizing: border-box;
+}
+
+.login-form label {
+    display: block;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 5px;
+    color: #155913;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #45AC42;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: #FCFCFC;
+    box-sizing: border-box;
+}
+
+.forgot-password {
+    display: block;
+    text-align: left;
+    margin-bottom: 30px;
+    color: #155913;
+    text-decoration: underline, solid;
+    font-size: 14px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.login-btn {
+    width: 211px;
+    height: 35px;
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #155913;
+    color: #FFFFFF;
+    margin-top: 30px;
+}
+
+.create-account-btn {
+    width: 228px;
+    height: 35px;
+    padding: 0;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    background-color: #155913;
+    color: #FFFFFF;
+}
+
+#emergency {
+    width: 228px;
+    height: 35px;
+    margin-top: 50px;
+    margin-left: 49px;
+    padding: 0;
+    border: none;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    
+}
+
+.login-btn:hover, .create-account-btn:hover, .emergency-btn:hover {
+    background-color: #155913;
+}
+
+.alert {
+    display: none; /* Escondido por padrão */
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+}

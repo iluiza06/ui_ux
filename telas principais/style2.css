@@ -16,6 +16,7 @@ main {
 h1,
 p {
     text-align: center;
+    margin:35px 0 15px;
 }
 
 header {
@@ -54,8 +55,6 @@ section {
 
 section h1 {
     font-weight: 500;
-    margin-bottom: 0;
-    padding: 0;
 }
 
 .card {
@@ -89,12 +88,14 @@ section h1 {
 
 .name {
     font-weight: 500;
+    margin: 10px 0;
+    
 }
 
 .grup {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px;
 }
 
 .notes {
@@ -115,7 +116,7 @@ section h1 {
 }
 
 .check img {
-    padding-top: 21px;
+    padding-top: 35px;
     padding-left: 5px;
 }
 
@@ -125,7 +126,7 @@ section h1 {
 }
 
 .bell img {
-    padding-top: 21px;
+    padding-top: 25px;
     padding-left: 5px;
 }
 

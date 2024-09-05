@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BemCuidar - Cadastro Profissional</title>
+    <link rel="stylesheet" href="CSS/style2.css">
+</head>
+<body>
+    <div class="logo">
+        <img src="img/logo.png" alt="BemCuidar">
+    </div>
+    <form>
+        <div class="campo">
+            <label for="nome">NOME</label>
+            <input type="text" id="nome" name="nome" placeholder="NOME">
+        </div>
+        <div class="campo">
+            <label for="sobrenome">SOBRENOME</label>
+            <input type="text" id="sobrenome" name="sobrenome" placeholder="SOBRENOME">
+        </div>
+        <div class="campo">
+            <label for="email">EMAIL</label>
+            <input type="email" id="email" name="email" placeholder="INSIRA SEU EMAIL">
+        </div>
+        <div class="campo">
+            <label for="telefone">TELEFONE DE CONTATO</label>
+            <input type="tel" id="telefone" name="telefone" placeholder="+55 (00) 00000-0000">
+        </div>
+        <div class="campo">
+            <label for="convenio">ACEITA CONVÊNIO</label>
+            <select id="convenio" name="convenio">
+                <option value="" disabled selected>Escolher</option>
+                <option value="sim">Sim</option>
+                <option value="nao">Não</option>
+            </select>
+        </div>
+        <div class="campo">
+            <label for="cargo">CARGO</label>
+            <select id="cargo" name="cargo">
+                <option value="" disabled selected>Médico(a), diarista, enfermeiro(a)...</option>
+                <option value="medico">Médico(a)</option>
+                <option value="diarista">Diarista</option>
+                <option value="enfermeiro">Enfermeiro(a)</option>
+            </select>
+        </div>
+        <div class="campo anexos">
+            <label for="anexos">ANEXO DE DOCUMENTOS</label>
+            <div class="documentos">
+                <ul>
+                    <li>Licença Médica</li>
+                    <li>RG</li>
+                    <li>Foto de boa visualização com fundo limpo</li>
+                    <li>Documentos em formato PDF</li>
+                </ul>
+            </div>
+        </div>
+        <div class="icons">
+            <img src="IMG/clip_icon.png" alt="Icone 1">
+            <img src="IMG/camera_icon.png" alt="Icone 2">
+            <img src="IMG/image_icon.png" alt="Icone 3">
+        </div>
+        <button class="create-account-btn" type="submit">CRIAR CONTA</button>
+    </form>
+</body>
+</html>

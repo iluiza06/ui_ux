@@ -50,6 +50,10 @@ input {
     color: #155913;
 }
 
+.jamile{
+    text-decoration: none;
+}
+
 main{
     display: flex;
     flex-direction: column;
@@ -76,7 +80,8 @@ background-color: #5ca14c9c;
 
 .names{
     font-weight: 600 ;
-    color: #155913;
+    color: #224621;
+    text-decoration: none;
 
 }
  .personsvg{

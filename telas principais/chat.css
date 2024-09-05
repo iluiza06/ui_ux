@@ -25,6 +25,11 @@ body {
     cursor: pointer;
 }
 
+.navbar button:hover {
+    background-color: #D5EECF;
+    color: #155913;
+}
+
 .chat-header {
     text-align: center;
     margin-top: 20px;
@@ -38,6 +43,7 @@ body {
 .chat-header h2 {
     margin: 10px 0 5px;
     color: #2E7D32;
+    text-decoration: none;
 }
 
 .chat-header p {
@@ -96,3 +102,50 @@ body {
 .sos p {
     font-weight: 800;
 }
+
+
+#messageInput {
+    width: 80%;
+    padding: 10px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+.message {
+    display: inline-block;
+    background-color: white;
+    border: 1px solid #5DAD5D;
+    padding: 10px 15px;
+    margin: 10px 0;
+    max-width: 75%;
+    word-wrap: break-word;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+
+.message-container  {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.message p {
+    margin: 0;
+}
+
+.sent-message { 
+    justify-content: flex-end;
+}
+
+.sent-message .message { 
+    border-radius: 50px 50px 0 50px; 
+    align-self: flex-end;
+}
+
+.received-message .message { 
+    border-radius: 50px 50px 50px 0;
+    background-color: white;
+}
+
+
