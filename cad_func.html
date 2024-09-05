@@ -24,6 +24,10 @@
             <input type="email" id="email" name="email" placeholder="INSIRA SEU EMAIL">
         </div>
         <div class="campo">
+            <label for="senha">SENHA (4 dígitos)</label>
+            <input type="password" id="senha" name="senha" placeholder="INSIRA SUA SENHA" maxlength="4">
+        </div>
+        <div class="campo">
             <label for="telefone">TELEFONE DE CONTATO</label>
             <input type="tel" id="telefone" name="telefone" placeholder="+55 (00) 00000-0000">
         </div>
@@ -66,6 +70,22 @@
         <img src="./telas principais/img/Component 1.svg" alt="sos">
         <p>EMERGENCIA</p>
     </button>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+    
+            const email = document.getElementById("email").value;
+            const senha = document.getElementById("senha").value;
+    
+            localStorage.setItem("cadastroEmail", email);
+            localStorage.setItem("cadastroSenha", senha);
+    
+           
+            window.location.href = "login.html";
+        });
+    </script>
+    
 
 </body>
 </html>

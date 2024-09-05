@@ -32,5 +32,38 @@
             <p>EMERGENCIA</p>
         </button>
     </form>
+
+    <script>
+        document.querySelector(".login-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+    
+            const emailInserido = document.getElementById("email").value;
+            const senhaInserida = document.getElementById("password").value;
+    
+            const emailCadastrado = localStorage.getItem("cadastroEmail");
+            const senhaCadastrada = localStorage.getItem("cadastroSenha");
+    
+            if (!emailCadastrado) {
+                document.getElementById("alertMessage").textContent = "Email não cadastrado";
+                document.getElementById("alertMessage").style.display = "block";
+                return;
+            }
+    
+            if (emailInserido === emailCadastrado && senhaInserida === senhaCadastrada) {
+                window.location.href = "telaprincipal_fun.html";
+            } else {
+                if (emailInserido !== emailCadastrado) {
+                    document.getElementById("alertMessage").textContent = "Email incorreto";
+                    document.getElementById("alertMessage").style.display = "block";
+                } else if (senhaInserida !== senhaCadastrada) {
+                    document.getElementById("alertMessage").textContent = "Senha incorreta";
+                    document.getElementById("alertMessage").style.display = "block";
+                }
+            }
+        });
+    </script>
+    
+    
+
 </body>
 </html>
