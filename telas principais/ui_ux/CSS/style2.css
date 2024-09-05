@@ -12,14 +12,6 @@ body {
     overflow: hidden; 
 }
 
-.logo img {
-    width: 80px;
-    height: auto;
-    margin-bottom: 10px;
-}
-
-
-
 .campo {
     margin-bottom: 20px;
 }
@@ -67,13 +59,14 @@ select option {
     border: 1px solid #155913;
     border-radius: 3px;
     padding: 10px;
+    width: 346px;
     background-color: linear-gradient(to top, #FCFCFC, #D5EECF);;
 }
 
 .icons {
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
+    margin: 0 0 16px 20px;
+    gap: 21px;
 }
 
 .create-account-btn {
@@ -92,4 +85,17 @@ select option {
 
 .create-account-btn:hover {
     background-color: #0F4011;
+}
+
+.sos {
+    font-weight: 600;
+    width: 100px;
+    margin: 15px auto 0;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.sos p {
+    font-weight: 800;
 }
