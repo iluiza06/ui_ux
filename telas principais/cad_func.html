@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>BemCuidar - Cadastro Profissional</title>
-    <link rel="stylesheet" href="CSS/style2.css">
+    <link rel="stylesheet" href="./ui_ux/CSS/style2.css">
 </head>
 <body>
     <div class="logo">
-        <img src="img/logo.png" alt="BemCuidar">
+        <img src="./ui_ux/IMG/logo.png" alt="BemCuidar">
     </div>
     <form>
         <div class="campo">
@@ -22,6 +22,10 @@
         <div class="campo">
             <label for="email">EMAIL</label>
             <input type="email" id="email" name="email" placeholder="INSIRA SEU EMAIL">
+        </div>
+        <div class="campo">
+            <label for="senha">SENHA (4 dígitos)</label>
+            <input type="password" id="senha" name="senha" placeholder="INSIRA SUA SENHA" maxlength="4">
         </div>
         <div class="campo">
             <label for="telefone">TELEFONE DE CONTATO</label>
@@ -56,11 +60,25 @@
             </div>
         </div>
         <div class="icons">
-            <img src="IMG/clip_icon.png" alt="Icone 1">
-            <img src="IMG/camera_icon.png" alt="Icone 2">
-            <img src="IMG/image_icon.png" alt="Icone 3">
+            <img src="./img/attach_file_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt="attach">
+            <img src="./img/photo_camera_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt=" photo">
+            <img src="./img/image_24dp_5F6368_FILL0_wght400_GRAD0_opsz24.svg" alt=" img">
         </div>
-        <button class="create-account-btn" type="submit">CRIAR CONTA</button>
+        <button class="create-account-btn" type="button" onclick="window.location.href='./login.html'">CRIAR CONTA</button>
+
     </form>
+    
+
+    <script>
+    document.querySelector("form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    window.location.href = './login.html'; 
+});
+
+
+    </script>
+    
+
 </body>
 </html>

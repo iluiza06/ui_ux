@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Criar Conta</title>
+        <link rel="stylesheet" href="telaCriarconta.css">
+        <!-- Google Fonts - Roboto -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900&display=swap"
+            rel="stylesheet">
+    </head>
+
+    <body class="background">
+        <header>
+            <a href="#"><img src="./ui_ux/IMG/logo.png" alt="logo"></a>
+        </header>
+
+        <main>
+            <form id="criarContaForm">
+                <section>
+                    <label for="nome">NOME</label>
+                    <input class="input" type="text" id="nome">
+
+                    <label for="sobrenome">SOBRENOME</label>
+                    <input class="input" type="text" id="sobrenome">
+
+                    <label for="cep">CEP</label>
+                    <input class="input" type="text" id="cep">
+
+                    <label for="endereco">ENDEREÇO</label>
+                    <input class="input" type="text" id="endereco">
+
+                    <label for="bairro">BAIRRO</label>
+                    <input class="input" type="text" id="bairro">
+
+                    <label for="complemento">COMPLEMENTO</label>
+                    <input class="input" type="text" id="complemento">
+                </section>
+
+                <section>
+                    <label for="email">EMAIL</label>
+                    <input class="input" type="email" id="email">
+
+                    <label for="email">SENHA (4 DIGITOS)</label>
+                    <input class="input" type="password" id="senha">
+
+                    <label for="telefone">TELEFONE</label>
+                    <input class="input" type="tel" id="telefone">
+
+                    <label for="telefoneemergencia">TELEFONE DE EMERGÊNCIA</label>
+                    <input class="input" type="tel" id="telefoneemergencia">
+
+                    <label for="contatodeemergencia">NOME DO CONTATO DE
+                        EMERGÊNCIA</label>
+                    <input class="input" type="text" id="contatodeemergencia">
+                </section>
+
+                <section>
+                        <button class="salvar" type="button" onclick="window.location.href='./login.html'">CRIAR CONTA</button>
+                    <p id="errorMessage" style="color: red; font-size: 14px; display: none;">Por favor, preencha todos os campos obrigatórios.</p>
+                </section>
+            </form>
+
+            <section>
+                <h4>SEJA NOSSO PARCEIRO</h4>
+                <a href="./cad_func.html">
+                    <button class="ccprofissional" type="button">CRIAR CONTA PROFISSIONAL</button>
+                </a>
+            </section>
+            
+            
+
+        </main>
+
+<script src="telaCadastro.js"></script>
+
+    </body>
+</html>

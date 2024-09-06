@@ -208,8 +208,7 @@ section h1 {
 
 .sos {
     font-weight: 600;
-    width: 100px;
-    margin: 15px auto 0;
+   margin: 50px 0 0 230px;
     background-color: transparent;
     border: none;
     cursor: pointer;
